@@ -30,3 +30,26 @@ La première colonne spécifie la partition, la seconde indique le point de mont
 8 - j'ai pas de clé usb
 
 9 - OK
+
+# **Exercice 2. Partitionnement LVM**
+
+1 - **sudo umount /media/data** et **sudo umount /media/win** pour démonter les systèmes de fichiers dans /data et /win. **sudo nano /etc/fstab** pour aller retirer les deux lignes ajoutés dans la question 6.
+
+2 - ![img](img/tp5_exo1_3.png)
+
+Les deux partitions ont bien été supprimées.
+Pour créer la nouvelle partition LVM on procède de la même façon que pour la création des précédentes partitions, son hexacode est cette fois-ci 8e.
+
+3 - **sudo pvcreate /dev/sdb1** => **sudo pvdisplay**
+
+![img](img/tp5_exo1_4.png)
+
+Le volume physique LVM a bien été crée.
+
+4 - ![img](img/tp5_exo1_5.png)
+
+On a donc crée un groupe de volume, vg1, contenant pour l'instant uniquement le volume physique crée à l'étape précédente.
+
+5 - Afin de créer un volume logique appelé lvData occupant l'intégralité de l'espace disque disponible on utilise la commande suivante : **sudo lvcreate -n lvData -l 100%FREE vg1**.
+
+6 - 
