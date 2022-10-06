@@ -52,4 +52,8 @@ On a donc crée un groupe de volume, vg1, contenant pour l'instant uniquement le
 
 5 - Afin de créer un volume logique appelé lvData occupant l'intégralité de l'espace disque disponible on utilise la commande suivante : **sudo lvcreate -n lvData -l 100%FREE vg1**.
 
-6 - 
+6 - On va d'abord créer la partition avec **sudo fdisk /dev/vg1/lvData** en laissant les paramètres par défaut. Ensuite on formate avec **sudo mkfs.ext4 /dev/bg1/lvData** puis on refait les mêmes étapes que dans la question 6 de l'exercice 1 pour qu'elle soit montée automatiquement.
+
+7 - On suit les mêmes étapes que précedemment pour créer un nouveau disque. On peut vérifier avec **lsblk** qu'il a bien été crée. On répète encore une fois les manipulations faites dans les questions 2 et 3 de l'exercice 1.
+
+8 - **sudo vgextend 
