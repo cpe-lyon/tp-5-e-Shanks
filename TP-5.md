@@ -7,11 +7,11 @@
 3 - On va créer une nouvelle partition avec **sudo fdisk /dev/sdb** (sdb qui est le nouveau disque que l'on a crée dans la première question de ce TP).
 Ensuite, on la paramètre de la sorte:
 
-![img](tp5_exo1_1.png)
+![img](img/tp5_exo1_1.png)
 
 Même mécanisme pour la seconde partition. Cela va créer une partition de 3Go de type linux. Il faut toutefois changer son type. Pour ce faire on utilise t, on entre le numéro de la partition (ici 2), et 7 comme hexcode.
 
-![img](tp5_exo1_2.png)
+![img](img/tp5_exo1_2.png)
 
 On a donc bien nos deux partitions: linux de 2Go et NTFS de 3Go. On quitte avec w pour sauvegarder.
 
